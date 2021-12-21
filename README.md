@@ -1,4 +1,4 @@
-# @merrylmr/h5-calendar
+# h5-calendar
 
 ## Project setup
 ```
