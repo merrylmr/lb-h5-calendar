@@ -1,0 +1,38 @@
+{
+  "name": "@merrylmr/h5-calendar",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "npm run build:component && npm run build:editor",
+    "lint": "vue-cli-service lint",
+    "build:component": "vue-cli-service build --target lib --name h5-calendar ./src/component/index.js",
+    "build:editor": "vue-cli-service build --no-clean --target lib --name editor ./src/component/editor.vue"
+  },
+  "main": "dist/h5-calendar.umd.min.js",
+  "dependencies": {
+    "@luban-h5/lbs-text-align": "^0.0.3",
+    "ant-design-vue": "^1.2.4",
+    "axios": "^0.19.0",
+    "core-js": "^3.6.5",
+    "font-awesome": "4.7.0",
+    "vant": "^2.2.13",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.2.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "license": "MIT"
+}
