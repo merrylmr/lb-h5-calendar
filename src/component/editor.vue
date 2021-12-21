@@ -7,19 +7,29 @@
 
 <template>
   <div>
-    <a-pagination
-      :current="current"
-      @change="handleSelectPage"
-      size="small"
-      :total="innerItems.length"
-      :defaultPageSize="1"
-      :itemRender="itemRender"
-    />
-    <lbs-image-gallery
-      style="margin: 16px 0"
-      :value="currentItem.value"
-      @change="handleSelectImage"
-    />
+    <a-radio-group
+        v-model="elementProps.mode"
+        @change="onChange">
+      <a-radio-button
+          v-for="(item,index) in options"
+          :key="index"
+          :value="item.value">
+        {{ item.label }}
+      </a-radio-button>
+    </a-radio-group>
+    <!--    <a-pagination-->
+    <!--      :current="current"-->
+    <!--      @change="handleSelectPage"-->
+    <!--      size="small"-->
+    <!--      :total="innerItems.length"-->
+    <!--      :defaultPageSize="1"-->
+    <!--      :itemRender="itemRender"-->
+    <!--    />-->
+    <!--    <lbs-image-gallery-->
+    <!--      style="margin: 16px 0"-->
+    <!--      :value="currentItem.value"-->
+    <!--      @change="handleSelectImage"-->
+    <!--    />-->
   </div>
 </template>
 
@@ -47,7 +57,17 @@ export default {
     }
   },
   data: () => ({
-    current: 1
+    current: 1,
+    options: [
+      {
+        label: '周',
+        value: 'week'
+      },
+      {
+        label: '月',
+        value: 'month'
+      }
+    ]
   }),
   methods: {
     handleSelectPage (page) {
@@ -75,6 +95,9 @@ export default {
       if (this.innerItems.length === 1) return
       this.elementProps.items.splice(index, 1)
       this.elementProps.activeIndex = Math.max(index - 1, 0)
+    },
+    onChange (e) {
+      console.log('onChange', e.target.value, this.elementProps)
     }
   }
 }

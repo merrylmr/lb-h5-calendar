@@ -1,27 +1,25 @@
 <template>
   <div>
     <!-- 编辑模式 -->
-    <img v-if="editorMode === 'edit' && items.length" :src="items[activeIndex].value"  width="100%" height="100%" />
-    <swipe v-else :autoplay="interval" indicator-color="red">
-      <swipe-item v-for="(item, index) in items" :key="index"><img :src="item.value" width="100%" height="100%" /></swipe-item>
-    </swipe>
+    <!--    <img v-if="editorMode === 'edit' && items.length" :src="items[activeIndex].value"  width="100%" height="100%" />-->
+    <!--    <swipe v-else :autoplay="interval" indicator-color="red">-->
+    <!--      <swipe-item v-for="(item, index) in items" :key="index"><img :src="item.value" width="100%" height="100%" /></swipe-item>-->
+    <!--    </swipe>-->
+    <v-calendar-mobile
+        :key="mode"
+        :changeMode="true"
+        :mode="mode">
+    </v-calendar-mobile>
   </div>
 </template>
 
 <script>
-import { Swipe, SwipeItem } from 'vant'
-import 'vant/lib/swipe/style'
-import 'vant/lib/swipe-item/style'
 
 export default {
   name: 'h5-calendar',
   // default icon
   // 默认 icon，配置文档参见：https://github.com/luban-h5/vue-cli-plugin-lbhc/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6-%E8%84%9A%E6%89%8B%E6%9E%B6%E7%AF%87%EF%BC%9Aicon-%E5%8F%82%E6%95%B0
   icon: 'thumbs-o-up',
-  components: {
-    Swipe,
-    SwipeItem
-  },
   props: {
     /**
      * editorMode 属性文档链接：
@@ -41,41 +39,40 @@ export default {
       type: String,
       default: 'edit'
     },
-    interval: {
-      type: Number,
-      default: 4000,
-      editor: {
-        type: 'a-input-number',
-        label: '间隔时间',
-        require: true
-      }
+    changeMode: {
+      type: Boolean,
+      default: true
     },
-    activeIndex: {
-      type: Number,
-      default: 0,
+    mode: {
+      type: String,
+      default: 'week',
       editor: {
-        custom: true
-      }
-    },
-    items: {
-      type: Array,
-      default: () => [
-        { value: 'https://img.yzcdn.cn/vant/apple-1.jpg' },
-        { value: 'https://img.yzcdn.cn/vant/apple-2.jpg' }
-      ],
-      editor: {
-        custom: true
+        custom: true,
+        type: 'a-radio-group',
+        label: '模式',
+        options: [
+          {
+            label: '周',
+            value: 'week'
+          },
+          {
+            label: '月',
+            value: 'month'
+          }
+        ]
       }
     }
   },
   editorConfig: {
-    components: {
+    components: {}
+  },
+  computed: {
+    key () {
+      return Date.now() + '_' + this.mode
     }
   },
   mounted () {
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
