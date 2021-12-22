@@ -10,6 +10,7 @@
         :changeMode="true"
         :mode="mode">
     </v-calendar-mobile>
+    日历组件
   </div>
 </template>
 
