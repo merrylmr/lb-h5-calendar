@@ -1,6 +1,6 @@
 {
   "name": "h5-calendar",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run build:component && npm run build:editor",
