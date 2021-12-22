@@ -1744,7 +1744,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a2fd266c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/component/editor.vue?vue&type=template&id=d53a80f6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4bb14b80-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/component/editor.vue?vue&type=template&id=d53a80f6&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('a-radio-group',{on:{"change":_vm.onChange},model:{value:(_vm.elementProps.mode),callback:function ($$v) {_vm.$set(_vm.elementProps, "mode", $$v)},expression:"elementProps.mode"}},_vm._l((_vm.options),function(item,index){return _c('a-radio-button',{key:index,attrs:{"value":item.value}},[_vm._v(" "+_vm._s(item.label)+" ")])}),1)],1)}
 var staticRenderFns = []
 
